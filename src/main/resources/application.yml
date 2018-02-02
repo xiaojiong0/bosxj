@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    view:
+      prefix: /public/
+      suffix: .jsp
+server:
+  servlet-path: /
+  port: 8000
+server.jsp-servlet.init-parameters.development: true

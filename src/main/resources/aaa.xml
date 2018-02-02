@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+    <!-- 配置支持媒体类型 -->
+    <property name="contentNegotiationManager">
+        <bean class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+            <property name="mediaTypes">
+                <map>
+                    <entry key="json" value="application/json"></entry>
+                    <entry key="xml" value="application/xml"></entry>
+                </map>
+            </property>
+        </bean>
+    </property>
+    <!-- 指定默认视图 -->
+    <property name="defaultViews">
+        <!-- 支持多个视图 -->
+        <list>
+            <!-- 对josn格式视图支持 -->
+            <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"></bean>
+            <!-- xml格式视图支持 -->
+            <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                <constructor-arg>
+                    <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+                        <property name="classesToBeBound">
+                            <list>
+                                <value>cn.itcast.domain.User</value>
+                            </list>
+                        </property>
+                    </bean>
+                </constructor-arg>
+            </bean>
+        </list>
+
+    </property>
+</bean>
