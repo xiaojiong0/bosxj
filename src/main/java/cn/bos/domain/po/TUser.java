@@ -1,7 +1,8 @@
-package cn.bos.domain.pojo;
+package cn.bos.domain.po;
 
 import javax.persistence.Table;
 import java.util.Date;
+
 @Table(name = "t_user")
 public class TUser {
     private String id;

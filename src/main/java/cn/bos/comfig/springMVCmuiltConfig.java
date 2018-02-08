@@ -1,6 +1,6 @@
 package cn.bos.comfig;
 
-import cn.bos.domain.pojo.Item;
+import cn.bos.domain.po.Item;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;

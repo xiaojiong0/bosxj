@@ -1,7 +1,7 @@
 package cn.bos.controller;
 
 import cn.bos.mapper.ItemMapper;
-import cn.bos.domain.pojo.Item;
+import cn.bos.domain.po.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

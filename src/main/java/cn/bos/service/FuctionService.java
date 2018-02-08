@@ -1,6 +1,6 @@
 package cn.bos.service;
 
-import cn.bos.domain.pojo.AuthFunction;
+import cn.bos.domain.po.AuthFunction;
 import cn.bos.domain.uipojo.EasyUIDataGridResult;
 
 import java.util.List;

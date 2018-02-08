@@ -2,7 +2,7 @@ package cn.bos.comfig;
 
 import cn.bos.mapper.RoleMapper;
 import cn.bos.mapper.UserMapper;
-import cn.bos.domain.pojo.TUser;
+import cn.bos.domain.po.TUser;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;

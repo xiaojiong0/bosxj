@@ -1,11 +1,11 @@
-package cn.bos.domain.pojo;
+package cn.bos.domain.po;
 
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Table(name = "auth_function")
 public class AuthFunction {
-    private String id;
+    private Long id;
 
     private String name;
 
@@ -23,12 +23,12 @@ public class AuthFunction {
     @Transient
     private AuthFunction authFunction;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

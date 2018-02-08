@@ -10,7 +10,7 @@
 
             <resultMap id="" type="">
 
-                <association property="authFunction" javaType="cn.bos.domain.pojo.AuthFunction">
+                <association property="authFunction" javaType="cn.bos.domain.po.AuthFunction">
                             <id column="id" property="id"/>
                             <result column="" property=""/>
                             <result column="" property=""/>
@@ -18,8 +18,8 @@
 
             </resultMap>
          -->
-    <delete id="bachDeleteids" parameterType="String">
-        DELETE FROM AUTH_FUNCTION WHERE ID IN (#{ids})
+    <delete id="bachDeleteids" parameterType="java.lang.String">
+        DELETE FROM AUTH_FUNCTION WHERE ID IN (${value})
     </delete>
 
 

@@ -49,7 +49,7 @@
                             timeout:2000,
                             showType:'slide'
                         });
-                        $('#dg').datagrid('reload');
+                        $('#grid').datagrid('reload');
                     },
                     error:function(){
                      alert("删除失败");

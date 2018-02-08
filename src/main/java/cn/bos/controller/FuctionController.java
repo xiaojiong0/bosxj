@@ -1,6 +1,6 @@
 package cn.bos.controller;
 
-import cn.bos.domain.pojo.AuthFunction;
+import cn.bos.domain.po.AuthFunction;
 import cn.bos.domain.uipojo.EasyUIDataGridResult;
 import cn.bos.service.FuctionService;
 import org.springframework.beans.factory.annotation.Autowired;

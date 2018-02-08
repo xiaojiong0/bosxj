@@ -43,7 +43,7 @@
 					text : '添加角色',
 					iconCls : 'icon-add',
 					handler : function(){
-						location.href='${pageContext.request.contextPath}/page_admin_role_add.action';
+						location.href='${pageContext.request.contextPath}/page/admin/role_add';
 					}
 				}           
 			],

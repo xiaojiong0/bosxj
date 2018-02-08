@@ -1,4 +1,4 @@
-package cn.bos.domain.pojo;
+package cn.bos.domain.po;
 
 import javax.persistence.Table;
 

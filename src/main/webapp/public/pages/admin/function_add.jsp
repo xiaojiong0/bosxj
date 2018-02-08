@@ -52,23 +52,23 @@
 					<tr>
 						<td width="200">编号</td>
 						<td>
-							<input type="text" name="code" class="easyui-validatebox" data-options="required:true" />
+							<input type="text" name="code" class="easyui-validatebox" data-options="required:true" value="baidu"/>
 						</td>
 					</tr>
 					<tr>
 						<td>名称</td>
-						<td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" /></td>
+						<td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" value="百度"/></td>
 					</tr>
 					<tr>
 						<td>访问路径</td>
-						<td><input type="text" name="page"  /></td>
+						<td><input type="text" name="page"  value="www.baidu.com"/></td>
 					</tr>
 					<tr>
 						<td>是否生成菜单</td>
 						<td>
 							<select name="generateMenu" class="easyui-combobox">
 								<option value="0">不生成</option>
-								<option value="1">生成</option>
+								<option value="1" selected>生成</option>
 							</select>
 						</td>
 					</tr>
@@ -87,7 +87,7 @@
 					<tr>
 						<td>描述</td>
 						<td>
-							<textarea name="description" rows="4" cols="60"></textarea>
+							<textarea name="description" rows="4" cols="60" >asda按时到场</textarea>
 						</td>
 					</tr>
 					</table>

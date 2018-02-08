@@ -1,8 +1,8 @@
-package cn.bos.domain.pojo;
+package cn.bos.domain.po;
 
 import javax.persistence.Table;
 
-@Table(name="auth_role")
+@Table(name = "auth_role")
 public class AuthRole {
     private String id;
 

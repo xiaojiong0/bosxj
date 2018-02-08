@@ -11,11 +11,11 @@
 	</settings>
 
 	<plugins>
-		<plugin interceptor="com.github.pagehelper.PageHelper">
-			<property name="dialect" value="mysql" />
-			<!-- 设置为true时，使用RowBounds分页会进行count查询 -->
-			<property name="rowBoundsWithCount" value="true" />
-		</plugin>
+			<plugin interceptor="com.github.pagehelper.PageHelper">
+				<property name="dialect" value="mysql" />
+				<!-- 设置为true时，使用RowBounds分页会进行count查询 -->
+				<property name="rowBoundsWithCount" value="true" />
+			</plugin>
 		
 		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
 			<!--主键自增回写方法,默认值MYSQL,详细说明请看文档 -->

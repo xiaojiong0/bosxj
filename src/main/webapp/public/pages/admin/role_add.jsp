@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -51,12 +52,11 @@
 		};
 		
 		$.ajax({
-			url : '${pageContext.request.contextPath}/json/menu.json',
+			url : '../../fuction/queryCombox',
 			type : 'POST',
-			dataType : 'text',
+			dataType : 'json',
 			success : function(data) {
-				var zNodes = eval("(" + data + ")");
-				$.fn.zTree.init($("#functionTree"), setting, zNodes);
+				$.fn.zTree.init($("#functionTree"), setting, data);
 			},
 			error : function(msg) {
 				alert('树加载异常!');
@@ -67,8 +67,21 @@
 		
 		// 点击保存
 		$('#save').click(function(){
-			location.href='${pageContext.request.contextPath}/page_admin_privilege.action';
-		});
+		    // var zTreeObj = $.fn.zTree.getZTreeObj("functionTree");
+            var v = $('roleForm').form('validate');
+            alert();
+			if(v) {
+			    alert(111);
+                var zTreeObj = $.fn.zTree.getZTreeObj("functionTree");
+                var array = new Array();
+                for(var i=0;i<zTreeObj.length;i++){
+                    array.push(zTreeObj[i].id);
+				}
+
+
+                $('roleForm').submit();
+            }
+			});
 	});
 </script>	
 </head>
@@ -79,7 +92,7 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:auto;padding:5px;" border="false">
-			<form id="roleForm" method="post">
+			<form id="roleForm" method="post" action="/role/addRole">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">角色信息</td>
@@ -87,12 +100,12 @@
 					<tr>
 						<td width="200">编号</td>
 						<td>
-							<input type="text" name="id" class="easyui-validatebox" data-options="required:true" />						
+							<input type="text" name="id" class="easyui-validatebox" data-options="required:true,validType:['length[0,10]']"  />
 						</td>
 					</tr>
 					<tr>
 						<td>名称</td>
-						<td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" /></td>
+						<td><input type="text" name="name" class="easyui-validatebox" data-options="validType:['length[0,6]']" /></td>
 					</tr>
 					<tr>
 						<td>描述</td>
@@ -100,6 +113,8 @@
 							<textarea name="description" rows="4" cols="60"></textarea>
 						</td>
 					</tr>
+
+					<input type="hidden" id="" name="function"/>
 					<tr>
 						<td>授权</td>
 						<td>
