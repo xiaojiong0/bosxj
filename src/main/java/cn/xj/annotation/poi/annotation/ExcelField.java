@@ -51,7 +51,7 @@ public @interface ExcelField {
 	String dictType() default "";
 	
 	/**
-	 * 反射类型（导出暂未实现）
+	 * 反射类型
 	 */
 	Class<?> fieldType() default Class.class;
 	
