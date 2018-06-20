@@ -6,4 +6,5 @@ import com.github.abel533.mapper.Mapper;
 public interface AuthFunctionMapper extends Mapper<AuthFunction> {
 
     int bachDeleteids(String ids);
+
 }

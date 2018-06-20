@@ -15,15 +15,17 @@ import java.util.List;
 public class poiInstreamTest {
 
 
-
+    @Test
     public void  poiInstram() throws Exception{
-        File file=new File("D:\\home\\idea\\bosXj\\src\\test\\java\\cn\\xj\\annotation\\poi\\lalala.xlsx");
+        //File file=new File("D:\\home\\idea\\bosXj\\src\\test\\java\\cn\\xj\\annotation\\poi\\123.xlsx");
+        File file=new File("C:\\Users\\44913\\Desktop\\123.xlsx");
+
         ImportExcel importExcel=new ImportExcel(file,0,0);
         List<User> dataList = importExcel.getDataList(User.class, null);
         System.out.println(dataList);
     }
 
-    public void dateTest() {
+    public  void dateTest() {
         int year=2017;
         for (int i = 5; i < 13; i++) {
             Calendar cal = Calendar.getInstance();
@@ -43,7 +45,7 @@ public class poiInstreamTest {
 
     }
 
-    @Test
+
     public void poiExport() throws Exception {
         User u1=new User("张三1","女",new Date(),"1234");
         User u2=new User("张三2","女",new Date(),"1234");

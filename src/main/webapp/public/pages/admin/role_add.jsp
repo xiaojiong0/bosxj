@@ -20,10 +20,6 @@
 	href="${pageContext.request.contextPath }/css/default.css">	
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/easyui/ext/jquery.portal.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/easyui/ext/jquery.cookie.js"></script>
 <script
 	src="${pageContext.request.contextPath }/js/easyui/locale/easyui-lang-zh_CN.js"
 	type="text/javascript"></script>
@@ -68,18 +64,19 @@
 		// 点击保存
 		$('#save').click(function(){
 		    // var zTreeObj = $.fn.zTree.getZTreeObj("functionTree");
-            var v = $('roleForm').form('validate');
-            alert();
-			if(v) {
-			    alert(111);
+            var v = $('#roleForm').form('validate');
+            alert(v);
+            if(v) {
                 var zTreeObj = $.fn.zTree.getZTreeObj("functionTree");
+                var nodes = zTreeObj.getCheckedNodes(true);//在提交表单之前将选中的checkbox收集
                 var array = new Array();
-                for(var i=0;i<zTreeObj.length;i++){
-                    array.push(zTreeObj[i].id);
-				}
-
-
-                $('roleForm').submit();
+                for(var i=0;i<nodes.length;i++){
+                    var id = nodes[i].id;//权限id
+                    array.push(id);
+                }
+				var s = array.join(",");
+					$('#ids').val(s);
+                $('#roleForm').submit();
             }
 			});
 	});
@@ -92,7 +89,7 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:auto;padding:5px;" border="false">
-			<form id="roleForm" method="post" action="/role/addRole">
+			<form id="roleForm" method="post" action="/authRole/addAuthRole">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">角色信息</td>
@@ -100,7 +97,7 @@
 					<tr>
 						<td width="200">编号</td>
 						<td>
-							<input type="text" name="id" class="easyui-validatebox" data-options="required:true,validType:['length[0,10]']"  />
+							<input type="text" name="code" class="easyui-validatebox" data-options="required:true"  />
 						</td>
 					</tr>
 					<tr>
@@ -114,7 +111,7 @@
 						</td>
 					</tr>
 
-					<input type="hidden" id="" name="function"/>
+					<input type="hidden" id="ids" name="functions"/>
 					<tr>
 						<td>授权</td>
 						<td>

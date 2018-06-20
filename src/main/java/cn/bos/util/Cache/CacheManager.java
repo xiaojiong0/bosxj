@@ -13,7 +13,7 @@ public class CacheManager {
     public  static final String strFormDict = "formDictformMain";
 
     /************************************************后台 缓存 ********************************************************/
-    public  static final  String findAllEstate="findAllEstate";//所有房地产信息
+    public  static final  String findAllEstate="findAllEstate";
 
     /************************************************后台 缓存  end********************************************************/
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bos.mapper.AuthRoleMapper">
+
+    <!--
+                <select id=""
+
+
+                <resultMap id="" type="">
+
+                    <association property="authFunction" javaType="cn.bos.domain.po.AuthFunction">
+                                <id column="id" property="id"/>
+                                <result column="" property=""/>
+                                <result column="" property=""/>
+                    </association>
+
+                </resultMap>
+             -->
+   <!-- <delete id="bachDeleteids" parameterType="java.lang.String">
+        DELETE FROM AUTH_FUNCTION WHERE ID IN (${value})
+    </delete>-->
+
+        <insert id="insertAuthRole" parameterType="cn.bos.domain.po.AuthRole">
+          <selectKey keyColumn="id" resultType="java.lang.Long" order="AFTER">
+              select last_insert_id()
+          </selectKey>
+            INSERT INTO auth_role(name,code,description) VALUES (#{name},#{code},#{description});
+        </insert>
+
+
+</mapper>

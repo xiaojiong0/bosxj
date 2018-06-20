@@ -47,13 +47,17 @@
 					}
 				}           
 			],
-			url : '',
+            pageList: [3,5,10],
+            pagination : true,
+			url : '${pageContext.request.contextPath}/authRole/pageQuery',
 			columns : [[
+                {field:'ck',checkbox:true},
 				{
 					field : 'id',
 					title : '编号',
-					width : 200
-				},
+					width : 200,
+					hidden:true
+   				 },
 				{
 					field : 'name',
 					title : '名称',
